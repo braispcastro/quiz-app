@@ -12,7 +12,24 @@ struct MenuView: View {
     @ObservedObject var viewModel: MenuViewModel
     
     var body: some View {
-        Text("MenuView")
+        NavigationView {
+            VStack(spacing: 8) {
+                Text("Quiz app!")
+                Spacer()
+                NavigationLink(destination: viewModel.showGameView) {
+                    Text("JUGAR")
+                }
+                NavigationLink(destination: viewModel.showLeaderboardView) {
+                    Text("PUNTUACIONES")
+                }
+                NavigationLink(destination: viewModel.showSettingsView) {
+                    Text("OPCIONES")
+                }
+            }
+            .navigationBarHidden(true)
+            .onAppear(perform: viewModel.onAppear)
+            .onDisappear(perform: viewModel.onDisappear)
+        }
     }
 }
 
