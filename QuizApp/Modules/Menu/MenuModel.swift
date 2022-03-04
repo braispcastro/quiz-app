@@ -10,7 +10,17 @@ import Foundation
 struct Menu {
     
     struct ViewObject {
+        var title: String
+        var play: String
+        var leaderboard: String
+        var settings: String
         
+        init() {
+            title = ""
+            play = ""
+            leaderboard = ""
+            settings = ""
+        }
     }
     
 }

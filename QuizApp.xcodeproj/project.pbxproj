@@ -27,6 +27,7 @@
 		8B2C6E2327D285BC00F070E9 /* LeaderboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C6E2227D285BC00F070E9 /* LeaderboardViewModel.swift */; };
 		8B2C6E2527D285D100F070E9 /* LeaderboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C6E2427D285D100F070E9 /* LeaderboardModel.swift */; };
 		8B2C6E2727D285F400F070E9 /* LeaderboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C6E2627D285F400F070E9 /* LeaderboardRouter.swift */; };
+		8B2C6E2A27D2AEF500F070E9 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B2C6E2827D28F6500F070E9 /* questions.json */; };
 		8BB83B4A27D2800800AEA157 /* QuizAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB83B4927D2800800AEA157 /* QuizAppApp.swift */; };
 		8BB83B4E27D2800A00AEA157 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BB83B4D27D2800A00AEA157 /* Assets.xcassets */; };
 		8BB83B5127D2800A00AEA157 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BB83B5027D2800A00AEA157 /* Preview Assets.xcassets */; };
@@ -248,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B2C6E2A27D2AEF500F070E9 /* questions.json in Resources */,
 				8BB83B5127D2800A00AEA157 /* Preview Assets.xcassets in Resources */,
 				8BB83B4E27D2800A00AEA157 /* Assets.xcassets in Resources */,
 			);

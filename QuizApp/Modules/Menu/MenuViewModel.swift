@@ -23,9 +23,18 @@ final class MenuViewModel: ObservableObject {
     
     init(router: MenuRouter) {
         self.router = router
+        prepareView()
     }
     
     // MARK: - Private Methods
+    
+    private func prepareView() {
+        viewObject = Menu.ViewObject()
+        viewObject.title = "QUIZ APP!"
+        viewObject.play = "JUGAR"
+        viewObject.leaderboard = "PUNTUACIONES"
+        viewObject.settings = "OPCIONES"
+    }
     
 }
 

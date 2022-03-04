@@ -14,16 +14,16 @@ struct MenuView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 8) {
-                Text("Quiz app!")
+                Text(viewModel.viewObject.title)
                 Spacer()
                 NavigationLink(destination: viewModel.showGameView) {
-                    Text("JUGAR")
+                    Text(viewModel.viewObject.play)
                 }
                 NavigationLink(destination: viewModel.showLeaderboardView) {
-                    Text("PUNTUACIONES")
+                    Text(viewModel.viewObject.leaderboard)
                 }
                 NavigationLink(destination: viewModel.showSettingsView) {
-                    Text("OPCIONES")
+                    Text(viewModel.viewObject.settings)
                 }
             }
             .navigationBarHidden(true)
