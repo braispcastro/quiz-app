@@ -8,10 +8,10 @@
 import SwiftUI
 
 enum MainButtonType {
-    case normal
+    case primary
+    case secondary
     case correct
     case incorrect
-    case selected
 }
 
 struct MainButtonStyle: ButtonStyle {
@@ -19,7 +19,7 @@ struct MainButtonStyle: ButtonStyle {
     let cornerRadius: CGFloat
     let buttonType: MainButtonType
     
-    init(cornerRadius: CGFloat = 8, buttonType: MainButtonType = .normal) {
+    init(cornerRadius: CGFloat = 8, buttonType: MainButtonType = .primary) {
         self.cornerRadius = cornerRadius
         self.buttonType = buttonType
     }
@@ -31,10 +31,10 @@ struct MainButtonStyle: ButtonStyle {
             .background(
                 Group {
                     switch buttonType {
-                    case .normal:
+                    case .primary:
                         RoundedRectangle(cornerRadius: cornerRadius)
                             .fill(Color.white)
-                    case .selected:
+                    case .secondary:
                         RoundedRectangle(cornerRadius: cornerRadius)
                             .fill(LinearGradient(colors: [Color.blueStart, Color.blueEnd],
                                                  startPoint: .top,
@@ -54,14 +54,14 @@ struct MainButtonStyle: ButtonStyle {
             )
             .overlay(
                 Group {
-                    if buttonType == .normal {
+                    if buttonType == .primary {
                         RoundedRectangle(cornerRadius: cornerRadius)
                             .stroke(lineWidth: 2)
                             .foregroundColor(Color.blueStart)
                     }
                 }
             )
-            .foregroundColor(buttonType == .normal ? Color.blueStart : Color.white)
+            .foregroundColor(buttonType == .primary ? Color.blueStart : Color.white)
             .font(.headline)
     }
 }
@@ -74,7 +74,7 @@ struct MainButton_Previews: PreviewProvider {
             }) {
                 Image.init(systemName: "flag")
             }
-            .buttonStyle(MainButtonStyle(buttonType: .normal))
+            .buttonStyle(MainButtonStyle(buttonType: .primary))
             
             Button(action: {
                 print("Icon button style")
@@ -84,21 +84,21 @@ struct MainButton_Previews: PreviewProvider {
                     Text("SURRENDER")
                 }
             }
-            .buttonStyle(MainButtonStyle(buttonType: .normal))
+            .buttonStyle(MainButtonStyle(buttonType: .primary))
             
             Button(action: {
                 print("Normal button style")
             }) {
                 Text("Normal button style")
             }
-            .buttonStyle(MainButtonStyle(buttonType: .normal))
+            .buttonStyle(MainButtonStyle(buttonType: .primary))
             
             Button(action: {
                 print("Selected button style")
             }) {
                 Text("Selected button style")
             }
-            .buttonStyle(MainButtonStyle(buttonType: .selected))
+            .buttonStyle(MainButtonStyle(buttonType: .secondary))
             
             Button(action: {
                 print("Correct button style")

@@ -95,22 +95,18 @@ final class GameViewModel: ObservableObject {
         viewObject.count = "\(currentQuestionIndex + 1)/\(questions.count)"
         let currentQuestion = questions[currentQuestionIndex]
         viewObject.question = currentQuestion.question
-        viewObject.firstAnswer = currentQuestion.answers[0]
-        viewObject.secondAnswer = currentQuestion.answers[1]
-        viewObject.thirdAnswer = currentQuestion.answers[2]
+        viewObject.buttons[0].title = currentQuestion.answers[0]
+        viewObject.buttons[0].style = .primary
+        viewObject.buttons[1].title = currentQuestion.answers[1]
+        viewObject.buttons[1].style = .primary
+        viewObject.buttons[2].title = currentQuestion.answers[2]
+        viewObject.buttons[2].style = .primary
         viewObject.isAnswerDisabled = false
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(questionTimer), userInfo: nil, repeats: true)
     }
     
     private func validateAnswer(_ type: Game.AnswerType) {
         timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(goToNextQuestionFromTimer), userInfo: nil, repeats: false)
-        
-        switch type {
-        case .correct:
-            break
-        case .incorrect, .timeout:
-            break
-        }
     }
     
     @objc private func questionTimer() {
@@ -119,6 +115,9 @@ final class GameViewModel: ObservableObject {
         
         if timeLeft < 1 {
             stopTimer()
+            let currentQuestion = questions[currentQuestionIndex]
+            let correctIndex = viewObject.buttons.firstIndex{ $0.title == currentQuestion.correct }!
+            viewObject.buttons[correctIndex].style = .secondary
             validateAnswer(.timeout)
         }
     }
@@ -149,11 +148,16 @@ extension GameViewModel: GameViewModelProtocol {
     func answerTapped(index: Int) {
         stopTimer()
         viewObject.isAnswerDisabled = true
+        viewObject.buttons[index].style = .secondary
         let currentQuestion = questions[currentQuestionIndex]
-        let isCorrect = currentQuestion.correct == currentQuestion.answers[index]
+        let correctIndex = viewObject.buttons.firstIndex{ $0.title == currentQuestion.correct }!
+        viewObject.buttons[correctIndex].style = .correct
+        let isCorrect = correctIndex == index
         if isCorrect {
             let points = Int(viewObject.totalPoints) ?? 0
             viewObject.totalPoints = "\(points + timeLeft)"
+        } else {
+            viewObject.buttons[index].style = .incorrect
         }
         let validationType: Game.AnswerType = isCorrect ? .correct : .incorrect
         validateAnswer(validationType)

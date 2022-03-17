@@ -19,9 +19,7 @@ struct Game {
         var count: String
         var totalPoints: String
         var question: String
-        var firstAnswer: String
-        var secondAnswer: String
-        var thirdAnswer: String
+        var buttons: [ButtonAnswer]
         var surrender: String
         var timeLeft: String
         var isAnswerDisabled: Bool
@@ -30,13 +28,20 @@ struct Game {
             count = ""
             totalPoints = ""
             question = ""
-            firstAnswer = ""
-            secondAnswer = ""
-            thirdAnswer = ""
+            buttons = [
+                ButtonAnswer(title: "", style: .primary),
+                ButtonAnswer(title: "", style: .primary),
+                ButtonAnswer(title: "", style: .primary)
+            ]
             surrender = ""
             timeLeft = ""
             isAnswerDisabled = false
         }
+    }
+    
+    struct ButtonAnswer {
+        var title: String
+        var style: MainButtonType
     }
     
     struct QuestionsData: Codable {

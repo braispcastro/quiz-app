@@ -10,6 +10,7 @@
 		8B1EFDF327E3CB80008D7A40 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1EFDF227E3CB80008D7A40 /* MainButton.swift */; };
 		8B1EFDF627E3CC83008D7A40 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1EFDF527E3CC83008D7A40 /* Color+Hex.swift */; };
 		8B1EFDF827E3DDEB008D7A40 /* Color+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1EFDF727E3DDEB008D7A40 /* Color+Custom.swift */; };
+		8B1EFDFA27E3E4BB008D7A40 /* MainNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1EFDF927E3E4BB008D7A40 /* MainNavigation.swift */; };
 		8B2C6E0027D282D200F070E9 /* MenuBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C6DFF27D282D200F070E9 /* MenuBuilder.swift */; };
 		8B2C6E0227D282DF00F070E9 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C6E0127D282DF00F070E9 /* MenuView.swift */; };
 		8B2C6E0427D282ED00F070E9 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C6E0327D282ED00F070E9 /* MenuViewModel.swift */; };
@@ -40,6 +41,7 @@
 		8B1EFDF227E3CB80008D7A40 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		8B1EFDF527E3CC83008D7A40 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		8B1EFDF727E3DDEB008D7A40 /* Color+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Custom.swift"; sourceTree = "<group>"; };
+		8B1EFDF927E3E4BB008D7A40 /* MainNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigation.swift; sourceTree = "<group>"; };
 		8B2C6DFF27D282D200F070E9 /* MenuBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBuilder.swift; sourceTree = "<group>"; };
 		8B2C6E0127D282DF00F070E9 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		8B2C6E0327D282ED00F070E9 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				8B1EFDF227E3CB80008D7A40 /* MainButton.swift */,
+				8B1EFDF927E3E4BB008D7A40 /* MainNavigation.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				8B2C6E0427D282ED00F070E9 /* MenuViewModel.swift in Sources */,
 				8B2C6E2527D285D100F070E9 /* LeaderboardModel.swift in Sources */,
 				8B1EFDF827E3DDEB008D7A40 /* Color+Custom.swift in Sources */,
+				8B1EFDFA27E3E4BB008D7A40 /* MainNavigation.swift in Sources */,
 				8B2C6E0C27D2845700F070E9 /* GameView.swift in Sources */,
 				8B1EFDF327E3CB80008D7A40 /* MainButton.swift in Sources */,
 				8B2C6E0027D282D200F070E9 /* MenuBuilder.swift in Sources */,

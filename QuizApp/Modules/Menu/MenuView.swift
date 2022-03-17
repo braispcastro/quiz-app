@@ -17,18 +17,34 @@ struct MenuView: View {
                 Text(viewModel.viewObject.title)
                 Spacer()
                 NavigationLink(destination: viewModel.showGameView) {
-                    Text(viewModel.viewObject.play)
+                    HStack {
+                        Spacer()
+                        Text(viewModel.viewObject.play)
+                        Spacer()
+                    }
                 }
+                .modifier(MainNavigationStyle())
                 NavigationLink(destination: viewModel.showLeaderboardView) {
-                    Text(viewModel.viewObject.leaderboard)
+                    HStack {
+                        Spacer()
+                        Text(viewModel.viewObject.leaderboard)
+                        Spacer()
+                    }
                 }
+                .modifier(MainNavigationStyle())
                 NavigationLink(destination: viewModel.showSettingsView) {
-                    Text(viewModel.viewObject.settings)
+                    HStack {
+                        Spacer()
+                        Text(viewModel.viewObject.settings)
+                        Spacer()
+                    }
                 }
+                .modifier(MainNavigationStyle())
             }
             .navigationBarHidden(true)
             .onAppear(perform: viewModel.onAppear)
             .onDisappear(perform: viewModel.onDisappear)
+            .padding(.horizontal, 16)
         }
     }
 }

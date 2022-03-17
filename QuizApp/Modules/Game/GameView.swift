@@ -28,36 +28,52 @@ struct GameView: View {
                         }
                     }
                     Button(action: viewModel.surrenderTapped) {
-                        Text("RENDIRSE")
+                        HStack {
+                            Image(systemName: "flag")
+                        }
                     }
+                    .buttonStyle(MainButtonStyle(buttonType: .primary))
                 }
                 Text(viewModel.viewObject.question)
                 Spacer()
                 Text(viewModel.viewObject.timeLeft)
+                    .font(.system(size: 64))
                 VStack(spacing: 8) {
                     Button(action: {
                         viewModel.answerTapped(index: 0)
                     }) {
-                        Text(viewModel.viewObject.firstAnswer)
-                            .fontWeight(.bold)
+                        HStack {
+                            Spacer()
+                            Text(viewModel.viewObject.buttons[0].title)
+                                .fontWeight(.bold)
+                            Spacer()
+                        }
                     }
-                    .padding(8)
+                    .buttonStyle(MainButtonStyle(buttonType: viewModel.viewObject.buttons[0].style))
                     
                     Button(action: {
                         viewModel.answerTapped(index: 1)
                     }) {
-                        Text(viewModel.viewObject.secondAnswer)
-                            .fontWeight(.bold)
+                        HStack {
+                            Spacer()
+                            Text(viewModel.viewObject.buttons[1].title)
+                                .fontWeight(.bold)
+                            Spacer()
+                        }
                     }
-                    .padding(8)
+                    .buttonStyle(MainButtonStyle(buttonType: viewModel.viewObject.buttons[1].style))
                     
                     Button(action: {
                         viewModel.answerTapped(index: 2)
                     }) {
-                        Text(viewModel.viewObject.thirdAnswer)
-                            .fontWeight(.bold)
+                        HStack {
+                            Spacer()
+                            Text(viewModel.viewObject.buttons[2].title)
+                                .fontWeight(.bold)
+                            Spacer()
+                        }
                     }
-                    .padding(8)
+                    .buttonStyle(MainButtonStyle(buttonType: viewModel.viewObject.buttons[2].style))
                     
                 }
                 .disabled(viewModel.viewObject.isAnswerDisabled)
@@ -67,7 +83,7 @@ struct GameView: View {
                 viewModel.onAppear(presentation)
             }
             .onDisappear(perform: viewModel.onDisappear)
-        .padding(.horizontal, 16)
+            .padding(.horizontal, 16)
         }
     }
 }
