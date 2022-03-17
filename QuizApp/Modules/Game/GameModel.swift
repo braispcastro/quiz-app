@@ -24,6 +24,7 @@ struct Game {
         var thirdAnswer: String
         var surrender: String
         var timeLeft: String
+        var isAnswerDisabled: Bool
         
         init() {
             count = ""
@@ -34,6 +35,7 @@ struct Game {
             thirdAnswer = ""
             surrender = ""
             timeLeft = ""
+            isAnswerDisabled = false
         }
     }
     

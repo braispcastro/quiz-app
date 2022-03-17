@@ -13,50 +13,62 @@ struct GameView: View {
     @ObservedObject var viewModel: GameViewModel
     
     var body: some View {
-        VStack(spacing: 64) {
-            ZStack {
-                HStack {
-                    VStack {
-                        Text("Ronda")
-                        Text(viewModel.viewObject.count)
+        ZStack {
+            VStack(spacing: 64) {
+                ZStack {
+                    HStack {
+                        VStack {
+                            Text("Ronda")
+                            Text(viewModel.viewObject.count)
+                        }
+                        Spacer()
+                        VStack {
+                            Text("Puntuación")
+                            Text(viewModel.viewObject.totalPoints)
+                        }
                     }
-                    Spacer()
-                    VStack {
-                        Text("Puntuación")
-                        Text(viewModel.viewObject.totalPoints)
+                    Button(action: viewModel.surrenderTapped) {
+                        Text("RENDIRSE")
                     }
                 }
-                Button(action: viewModel.surrenderTapped) {
-                    Text("RENDIRSE")
+                Text(viewModel.viewObject.question)
+                Spacer()
+                Text(viewModel.viewObject.timeLeft)
+                VStack(spacing: 8) {
+                    Button(action: {
+                        viewModel.answerTapped(index: 0)
+                    }) {
+                        Text(viewModel.viewObject.firstAnswer)
+                            .fontWeight(.bold)
+                    }
+                    .padding(8)
+                    
+                    Button(action: {
+                        viewModel.answerTapped(index: 1)
+                    }) {
+                        Text(viewModel.viewObject.secondAnswer)
+                            .fontWeight(.bold)
+                    }
+                    .padding(8)
+                    
+                    Button(action: {
+                        viewModel.answerTapped(index: 2)
+                    }) {
+                        Text(viewModel.viewObject.thirdAnswer)
+                            .fontWeight(.bold)
+                    }
+                    .padding(8)
+                    
                 }
+                .disabled(viewModel.viewObject.isAnswerDisabled)
             }
-            Text(viewModel.viewObject.question)
-            Spacer()
-            Text(viewModel.viewObject.timeLeft)
-            VStack(spacing: 8) {
-                Button(action: {
-                    viewModel.answerTapped(index: 0)
-                }, label: {
-                    Text(viewModel.viewObject.firstAnswer)
-                })
-                Button(action: {
-                    viewModel.answerTapped(index: 1)
-                }, label: {
-                    Text(viewModel.viewObject.secondAnswer)
-                })
-                Button(action: {
-                    viewModel.answerTapped(index: 2)
-                }, label: {
-                    Text(viewModel.viewObject.thirdAnswer)
-                })
+            .navigationBarHidden(true)
+            .onAppear {
+                viewModel.onAppear(presentation)
             }
-        }
-        .navigationBarHidden(true)
-        .onAppear {
-            viewModel.onAppear(presentation)
-        }
-        .onDisappear(perform: viewModel.onDisappear)
+            .onDisappear(perform: viewModel.onDisappear)
         .padding(.horizontal, 16)
+        }
     }
 }
 

@@ -98,12 +98,19 @@ final class GameViewModel: ObservableObject {
         viewObject.firstAnswer = currentQuestion.answers[0]
         viewObject.secondAnswer = currentQuestion.answers[1]
         viewObject.thirdAnswer = currentQuestion.answers[2]
+        viewObject.isAnswerDisabled = false
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(questionTimer), userInfo: nil, repeats: true)
     }
     
     private func validateAnswer(_ type: Game.AnswerType) {
         timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(goToNextQuestionFromTimer), userInfo: nil, repeats: false)
-        // TODO: Feedback answer
+        
+        switch type {
+        case .correct:
+            break
+        case .incorrect, .timeout:
+            break
+        }
     }
     
     @objc private func questionTimer() {
@@ -140,7 +147,16 @@ extension GameViewModel: GameViewModelProtocol {
     }
     
     func answerTapped(index: Int) {
-        
+        stopTimer()
+        viewObject.isAnswerDisabled = true
+        let currentQuestion = questions[currentQuestionIndex]
+        let isCorrect = currentQuestion.correct == currentQuestion.answers[index]
+        if isCorrect {
+            let points = Int(viewObject.totalPoints) ?? 0
+            viewObject.totalPoints = "\(points + timeLeft)"
+        }
+        let validationType: Game.AnswerType = isCorrect ? .correct : .incorrect
+        validateAnswer(validationType)
     }
     
 }

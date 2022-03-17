@@ -13,6 +13,7 @@ struct QuizAppApp: App {
     var body: some Scene {
         WindowGroup {
             MenuBuilder.build()
+                .preferredColorScheme(.light)
         }
     }
     
