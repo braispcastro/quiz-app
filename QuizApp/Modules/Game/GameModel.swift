@@ -24,6 +24,8 @@ struct Game {
         var timeLeft: String
         var isAnswerDisabled: Bool
         
+        var showPrompt: Bool
+        
         init() {
             count = ""
             totalPoints = ""
@@ -36,6 +38,7 @@ struct Game {
             surrender = ""
             timeLeft = ""
             isAnswerDisabled = false
+            showPrompt = false
         }
     }
     

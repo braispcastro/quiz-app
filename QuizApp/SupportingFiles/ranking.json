@@ -1,0 +1,53 @@
+
+[
+    {
+        "id": 0,
+        "name": "Player 1",
+        "points": 250
+    },
+    {
+        "id": 1,
+        "name": "Player 2",
+        "points": 200
+    },
+    {
+        "id": 2,
+        "name": "Player 3",
+        "points": 175
+    },
+    {
+        "id": 3,
+        "name": "Player 4",
+        "points": 150
+    },
+    {
+        "id": 4,
+        "name": "Player 5",
+        "points": 125
+    },
+    {
+        "id": 5,
+        "name": "Player 6",
+        "points": 100
+    },
+    {
+        "id": 6,
+        "name": "Player 7",
+        "points": 75
+    },
+    {
+        "id": 7,
+        "name": "Player 8",
+        "points": 50
+    },
+    {
+        "id": 8,
+        "name": "Player 9",
+        "points": 25
+    },
+    {
+        "id": 9,
+        "name": "Player 10",
+        "points": 0
+    }
+]

@@ -12,7 +12,7 @@ protocol SettingsViewModelProtocol {
     func onDisappear()
 }
 
-final class SettingsViewModel: SettingsViewModelProtocol, ObservableObject {
+final class SettingsViewModel: ObservableObject {
     
     @Published var viewObject: Settings.ViewObject!
     
@@ -22,7 +22,11 @@ final class SettingsViewModel: SettingsViewModelProtocol, ObservableObject {
         self.router = router
     }
     
-    // MARK: - Public Methods
+    // MARK: - Private Methods
+    
+}
+
+extension SettingsViewModel: SettingsViewModelProtocol {
     
     func onAppear() {
         
@@ -31,7 +35,5 @@ final class SettingsViewModel: SettingsViewModelProtocol, ObservableObject {
     func onDisappear() {
         
     }
-    
-    // MARK: - Private Methods
     
 }

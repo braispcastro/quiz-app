@@ -6,32 +6,44 @@
 //
 
 import Foundation
+import SwiftUI
 
 protocol LeaderboardViewModelProtocol {
-    func onAppear()
+    func onAppear(_ presentation: Binding<PresentationMode>)
     func onDisappear()
 }
 
-final class LeaderboardViewModel: LeaderboardViewModelProtocol, ObservableObject {
+final class LeaderboardViewModel: ObservableObject {
     
     @Published var viewObject: Leaderboard.ViewObject!
+    
+    private var presentation: Binding<PresentationMode>!
     
     private let router: LeaderboardRouter!
     
     init(router: LeaderboardRouter) {
         self.router = router
+        prepareView()
     }
     
-    // MARK: - Public Methods
+    private func prepareView() {
+        viewObject = Leaderboard.ViewObject()
+    }
     
-    func onAppear() {
-        
+    // MARK: - Private Methods
+    
+}
+
+// MARK: - LeaderboardViewModelProtocol
+extension LeaderboardViewModel: LeaderboardViewModelProtocol {
+    
+    func onAppear(_ presentation: Binding<PresentationMode>) {
+        self.presentation = presentation
+        viewObject.ranking = RankingManager.shared.getRankingFromMemory()
     }
     
     func onDisappear() {
         
     }
-    
-    // MARK: - Private Methods
     
 }

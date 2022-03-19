@@ -86,6 +86,8 @@ final class GameViewModel: ObservableObject {
     private func nextQuestion() {
         guard currentQuestionIndex < 9 else {
             // TODO: Game finished
+            //RankingManager.shared.saveGameToRanking(name: "Brais", points: totalPoints)
+            viewObject.showPrompt = true
             return
         }
         
@@ -134,6 +136,7 @@ extension GameViewModel: GameViewModelProtocol {
     
     func onAppear(_ presentation: Binding<PresentationMode>) {
         self.presentation = presentation
+        viewObject.showPrompt = false
         setupQuestions()
     }
     
@@ -154,8 +157,8 @@ extension GameViewModel: GameViewModelProtocol {
         viewObject.buttons[correctIndex].style = .correct
         let isCorrect = correctIndex == index
         if isCorrect {
-            let points = Int(viewObject.totalPoints) ?? 0
-            viewObject.totalPoints = "\(points + timeLeft)"
+            totalPoints = Int(viewObject.totalPoints) ?? 0
+            viewObject.totalPoints = "\(totalPoints + timeLeft)"
         } else {
             viewObject.buttons[index].style = .incorrect
         }

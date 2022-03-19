@@ -9,10 +9,30 @@ import SwiftUI
 
 struct LeaderboardView: View {
     
+    @Environment(\.presentationMode) var presentation
     @ObservedObject var viewModel: LeaderboardViewModel
     
     var body: some View {
-        Text("LeaderboardView")
+        ZStack {
+            List {
+                ForEach(viewModel.viewObject.ranking) { rank in
+                    HStack {
+                        Text("\(rank.id + 1).")
+                        Text(rank.name)
+                        Spacer()
+                        Text(String(rank.points))
+                    }
+                    .listRowSeparator(.hidden)
+                }
+            }
+            .navigationTitle("Puntuaciones")
+            .listStyle(.plain)
+        }
+        .onAppear {
+            viewModel.onAppear(presentation)
+        }
+        .onDisappear(perform: viewModel.onDisappear)
+        .padding(.horizontal, 16)
     }
 }
 

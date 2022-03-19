@@ -83,7 +83,11 @@ struct GameView: View {
                 viewModel.onAppear(presentation)
             }
             .onDisappear(perform: viewModel.onDisappear)
-            .padding(.horizontal, 16)
+            .padding(.horizontal, 16)            
+                
+            if viewModel.viewObject.showPrompt {
+                NamePromptBuilder.build(points: viewModel.viewObject.totalPoints)
+            }
         }
     }
 }
