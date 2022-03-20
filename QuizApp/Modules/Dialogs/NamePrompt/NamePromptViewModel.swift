@@ -19,11 +19,11 @@ final class NamePromptViewModel: ObservableObject {
     @Published var viewObject: NamePrompt.ViewObject!
     
     private var presentation: Binding<PresentationMode>!
-    private let points: String
+    private let points: Int
     
     private let router: NamePromptRouter!
     
-    init(router: NamePromptRouter, points: String) {
+    init(router: NamePromptRouter, points: Int) {
         self.points = points
         self.router = router
         prepareView()
@@ -31,6 +31,7 @@ final class NamePromptViewModel: ObservableObject {
     
     private func prepareView() {
         viewObject = NamePrompt.ViewObject()
+        viewObject.message = "¡Has conseguido \(points) puntos!"
     }
     
     // MARK: - Private Methods
@@ -41,7 +42,6 @@ extension NamePromptViewModel: NamePromptViewModelProtocol {
     
     func onAppear(_ presentation: Binding<PresentationMode>) {
         self.presentation = presentation
-        viewObject.message = "¡Has conseguido \(points) puntos!"
     }
     
     func onDisappear() {
@@ -50,8 +50,8 @@ extension NamePromptViewModel: NamePromptViewModelProtocol {
     
     func confirmTapped() {
         let name = viewObject.name.trimmingCharacters(in: .whitespacesAndNewlines)
-        if name.count > 0, let p = Int(points) {
-            RankingManager.shared.saveGameToRanking(name: name, points: p)
+        if name.count > 0 {
+            RankingManager.shared.saveGameToRanking(name: name, points: points)
             presentation.wrappedValue.dismiss()
         }
     }

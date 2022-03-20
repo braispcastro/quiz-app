@@ -15,6 +15,10 @@ struct Game {
         case timeout
     }
     
+    struct RouterObject {
+        var showNamePrompt: Bool = false
+    }
+    
     struct ViewObject {
         var count: String
         var totalPoints: String
@@ -23,8 +27,6 @@ struct Game {
         var surrender: String
         var timeLeft: String
         var isAnswerDisabled: Bool
-        
-        var showPrompt: Bool
         
         init() {
             count = ""
@@ -38,7 +40,6 @@ struct Game {
             surrender = ""
             timeLeft = ""
             isAnswerDisabled = false
-            showPrompt = false
         }
     }
     

@@ -78,17 +78,17 @@ struct GameView: View {
                 }
                 .disabled(viewModel.viewObject.isAnswerDisabled)
             }
-            .navigationBarHidden(true)
-            .onAppear {
-                viewModel.onAppear(presentation)
-            }
-            .onDisappear(perform: viewModel.onDisappear)
-            .padding(.horizontal, 16)            
-                
-            if viewModel.viewObject.showPrompt {
-                NamePromptBuilder.build(points: viewModel.viewObject.totalPoints)
+            .padding(.horizontal, 16)
+            
+            if viewModel.routerObject.showNamePrompt {
+                viewModel.showNamePrompt()
             }
         }
+        .navigationBarHidden(true)
+        .onAppear {
+            viewModel.onAppear(presentation)
+        }
+        .onDisappear(perform: viewModel.onDisappear)
     }
 }
 

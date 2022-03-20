@@ -13,11 +13,13 @@ protocol GameViewModelProtocol {
     func onDisappear()
     func surrenderTapped()
     func answerTapped(index: Int)
+    func showNamePrompt() -> NamePromptView
 }
 
 final class GameViewModel: ObservableObject {
     
     @Published var viewObject: Game.ViewObject!
+    @Published var routerObject: Game.RouterObject!
     
     private var presentation: Binding<PresentationMode>!
     private var timer: Timer!
@@ -35,6 +37,7 @@ final class GameViewModel: ObservableObject {
     }
     
     private func prepareView() {
+        routerObject = Game.RouterObject()
         viewObject = Game.ViewObject()
         getQuestions()
     }
@@ -87,7 +90,7 @@ final class GameViewModel: ObservableObject {
         guard currentQuestionIndex < 9 else {
             // TODO: Game finished
             //RankingManager.shared.saveGameToRanking(name: "Brais", points: totalPoints)
-            viewObject.showPrompt = true
+            routerObject.showNamePrompt = true
             return
         }
         
@@ -136,12 +139,12 @@ extension GameViewModel: GameViewModelProtocol {
     
     func onAppear(_ presentation: Binding<PresentationMode>) {
         self.presentation = presentation
-        viewObject.showPrompt = false
         setupQuestions()
     }
     
     func onDisappear() {
         stopTimer()
+        routerObject.showNamePrompt = false
     }
     
     func surrenderTapped() {
@@ -164,6 +167,10 @@ extension GameViewModel: GameViewModelProtocol {
         }
         let validationType: Game.AnswerType = isCorrect ? .correct : .incorrect
         validateAnswer(validationType)
+    }
+    
+    func showNamePrompt() -> NamePromptView {
+        return router.namePrompt(points: totalPoints)
     }
     
 }

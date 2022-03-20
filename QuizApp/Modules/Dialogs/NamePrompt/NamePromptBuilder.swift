@@ -9,7 +9,7 @@ import Foundation
 
 final class NamePromptBuilder {
     
-    static func build(points: String) -> NamePromptView {
+    static func build(points: Int) -> NamePromptView {
         
         let router: NamePromptRouter = NamePromptRouter()
         let viewModel: NamePromptViewModel = NamePromptViewModel(router: router, points: points)

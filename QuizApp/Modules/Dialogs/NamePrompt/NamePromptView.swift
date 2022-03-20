@@ -44,7 +44,6 @@ struct NamePromptView: View {
             .frame(width: UIScreen.main.bounds.width - 50, height: 250)
             .background(Color.white)
             .foregroundColor(Color.black)
-            //.clipped()
             .cornerRadius(8)
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
@@ -61,6 +60,6 @@ struct NamePromptView: View {
 
 struct NamePromptView_Previews: PreviewProvider {
     static var previews: some View {
-        NamePromptBuilder.build(points: "50")
+        NamePromptBuilder.build(points: 75)
     }
 }

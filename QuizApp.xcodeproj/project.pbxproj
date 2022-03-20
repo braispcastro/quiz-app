@@ -96,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B1703EE27E7CB05007A613F /* Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				8B24AED027E5597B00D7F03D /* NamePrompt */,
+			);
+			path = Dialogs;
+			sourceTree = "<group>";
+		};
 		8B1EFDF127E3CB0E008D7A40 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				8B1EFDF127E3CB0E008D7A40 /* Components */,
+				8B1703EE27E7CB05007A613F /* Dialogs */,
 				8B2C6DFB27D281DE00F070E9 /* Menu */,
 				8B2C6DFD27D281F200F070E9 /* Game */,
 				8B2C6DFC27D281E800F070E9 /* Leaderboard */,
@@ -191,7 +200,6 @@
 		8B2C6DFD27D281F200F070E9 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				8B24AED027E5597B00D7F03D /* NamePrompt */,
 				8B2C6E0927D2842F00F070E9 /* GameBuilder.swift */,
 				8B2C6E0B27D2845700F070E9 /* GameView.swift */,
 				8B2C6E0D27D2847400F070E9 /* GameViewModel.swift */,

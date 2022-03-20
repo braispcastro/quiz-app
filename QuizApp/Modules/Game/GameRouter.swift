@@ -8,12 +8,12 @@
 import Foundation
 
 protocol GameRouterProtocol {
-    func promptName(points: String) -> NamePromptView
+    func namePrompt(points: Int) -> NamePromptView
 }
 
 final class GameRouter: GameRouterProtocol {
     
-    func promptName(points: String) -> NamePromptView {
+    func namePrompt(points: Int) -> NamePromptView {
         NamePromptBuilder.build(points: points)
     }
     
