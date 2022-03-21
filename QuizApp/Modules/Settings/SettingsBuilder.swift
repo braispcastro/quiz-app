@@ -11,8 +11,7 @@ final class SettingsBuilder {
     
     static func build() -> SettingsView {
         
-        let router: SettingsRouter = SettingsRouter()
-        let viewModel: SettingsViewModel = SettingsViewModel(router: router)
+        let viewModel: SettingsViewModel = SettingsViewModel()
         let view: SettingsView = SettingsView(viewModel: viewModel)
 
         return view

@@ -31,7 +31,6 @@ struct LeaderboardView: View {
         .onAppear {
             viewModel.onAppear(presentation)
         }
-        .onDisappear(perform: viewModel.onDisappear)
         .padding(.horizontal, 16)
     }
 }

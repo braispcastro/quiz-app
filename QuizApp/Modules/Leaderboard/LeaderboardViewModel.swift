@@ -10,7 +10,6 @@ import SwiftUI
 
 protocol LeaderboardViewModelProtocol {
     func onAppear(_ presentation: Binding<PresentationMode>)
-    func onDisappear()
 }
 
 final class LeaderboardViewModel: ObservableObject {
@@ -19,10 +18,7 @@ final class LeaderboardViewModel: ObservableObject {
     
     private var presentation: Binding<PresentationMode>!
     
-    private let router: LeaderboardRouter!
-    
-    init(router: LeaderboardRouter) {
-        self.router = router
+    init() {
         prepareView()
     }
     
@@ -40,10 +36,6 @@ extension LeaderboardViewModel: LeaderboardViewModelProtocol {
     func onAppear(_ presentation: Binding<PresentationMode>) {
         self.presentation = presentation
         viewObject.ranking = RankingManager.shared.getRankingFromMemory()
-    }
-    
-    func onDisappear() {
-        
     }
     
 }

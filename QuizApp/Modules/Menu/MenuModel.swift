@@ -14,13 +14,6 @@ struct Menu {
         var play: String
         var leaderboard: String
         var settings: String
-        
-        init() {
-            title = ""
-            play = ""
-            leaderboard = ""
-            settings = ""
-        }
     }
     
 }

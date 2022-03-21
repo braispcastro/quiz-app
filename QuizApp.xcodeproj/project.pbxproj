@@ -29,12 +29,10 @@
 		8B2C6E1627D284F700F070E9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C6E1527D284F700F070E9 /* SettingsView.swift */; };
 		8B2C6E1827D2851200F070E9 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C6E1727D2851200F070E9 /* SettingsViewModel.swift */; };
 		8B2C6E1A27D2853100F070E9 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C6E1927D2853100F070E9 /* SettingsModel.swift */; };
-		8B2C6E1D27D2855400F070E9 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C6E1C27D2855400F070E9 /* SettingsRouter.swift */; };
 		8B2C6E1F27D2857500F070E9 /* LeaderboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C6E1E27D2857500F070E9 /* LeaderboardBuilder.swift */; };
 		8B2C6E2127D2859800F070E9 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C6E2027D2859800F070E9 /* LeaderboardView.swift */; };
 		8B2C6E2327D285BC00F070E9 /* LeaderboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C6E2227D285BC00F070E9 /* LeaderboardViewModel.swift */; };
 		8B2C6E2527D285D100F070E9 /* LeaderboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C6E2427D285D100F070E9 /* LeaderboardModel.swift */; };
-		8B2C6E2727D285F400F070E9 /* LeaderboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C6E2627D285F400F070E9 /* LeaderboardRouter.swift */; };
 		8B2C6E2A27D2AEF500F070E9 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B2C6E2827D28F6500F070E9 /* questions.json */; };
 		8BB83B4A27D2800800AEA157 /* QuizAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB83B4927D2800800AEA157 /* QuizAppApp.swift */; };
 		8BB83B4E27D2800A00AEA157 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BB83B4D27D2800A00AEA157 /* Assets.xcassets */; };
@@ -66,12 +64,10 @@
 		8B2C6E1527D284F700F070E9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8B2C6E1727D2851200F070E9 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		8B2C6E1927D2853100F070E9 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
-		8B2C6E1C27D2855400F070E9 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		8B2C6E1E27D2857500F070E9 /* LeaderboardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardBuilder.swift; sourceTree = "<group>"; };
 		8B2C6E2027D2859800F070E9 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 		8B2C6E2227D285BC00F070E9 /* LeaderboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewModel.swift; sourceTree = "<group>"; };
 		8B2C6E2427D285D100F070E9 /* LeaderboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardModel.swift; sourceTree = "<group>"; };
-		8B2C6E2627D285F400F070E9 /* LeaderboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardRouter.swift; sourceTree = "<group>"; };
 		8B2C6E2827D28F6500F070E9 /* questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		8BB83B4627D2800800AEA157 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB83B4927D2800800AEA157 /* QuizAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAppApp.swift; sourceTree = "<group>"; };
@@ -186,7 +182,6 @@
 				8B2C6E2027D2859800F070E9 /* LeaderboardView.swift */,
 				8B2C6E2227D285BC00F070E9 /* LeaderboardViewModel.swift */,
 				8B2C6E2427D285D100F070E9 /* LeaderboardModel.swift */,
-				8B2C6E2627D285F400F070E9 /* LeaderboardRouter.swift */,
 			);
 			path = Leaderboard;
 			sourceTree = "<group>";
@@ -210,7 +205,6 @@
 				8B2C6E1527D284F700F070E9 /* SettingsView.swift */,
 				8B2C6E1727D2851200F070E9 /* SettingsViewModel.swift */,
 				8B2C6E1927D2853100F070E9 /* SettingsModel.swift */,
-				8B2C6E1C27D2855400F070E9 /* SettingsRouter.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -343,11 +337,9 @@
 				8B2C6E1227D284A500F070E9 /* GameRouter.swift in Sources */,
 				8B2C6E2327D285BC00F070E9 /* LeaderboardViewModel.swift in Sources */,
 				8B24AECF27E54EA600D7F03D /* RankingManager.swift in Sources */,
-				8B2C6E1D27D2855400F070E9 /* SettingsRouter.swift in Sources */,
 				8B2C6E1F27D2857500F070E9 /* LeaderboardBuilder.swift in Sources */,
 				8B24AECD27E535F600D7F03D /* UserDefaultsProvider.swift in Sources */,
 				8B2C6E0E27D2847400F070E9 /* GameViewModel.swift in Sources */,
-				8B2C6E2727D285F400F070E9 /* LeaderboardRouter.swift in Sources */,
 				8B2C6E2127D2859800F070E9 /* LeaderboardView.swift in Sources */,
 				8B2C6E0827D2830C00F070E9 /* MenuRouter.swift in Sources */,
 				8B2C6E0227D282DF00F070E9 /* MenuView.swift in Sources */,

@@ -20,7 +20,6 @@ struct Game {
         var totalPoints: String
         var question: String
         var buttons: [ButtonAnswer]
-        var surrender: String
         var timeLeft: String
         var isAnswerDisabled: Bool
         
@@ -33,7 +32,6 @@ struct Game {
                 ButtonAnswer(title: "", style: .primary),
                 ButtonAnswer(title: "", style: .primary)
             ]
-            surrender = ""
             timeLeft = ""
             isAnswerDisabled = false
         }

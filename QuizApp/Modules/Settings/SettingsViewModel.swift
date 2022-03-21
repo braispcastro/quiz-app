@@ -8,18 +8,15 @@
 import Foundation
 
 protocol SettingsViewModelProtocol {
-    func onAppear()
-    func onDisappear()
+    
 }
 
 final class SettingsViewModel: ObservableObject {
     
     @Published var viewObject: Settings.ViewObject!
     
-    private let router: SettingsRouter!
-    
-    init(router: SettingsRouter) {
-        self.router = router
+    init() {
+        
     }
     
     // MARK: - Private Methods
@@ -27,13 +24,5 @@ final class SettingsViewModel: ObservableObject {
 }
 
 extension SettingsViewModel: SettingsViewModelProtocol {
-    
-    func onAppear() {
-        
-    }
-    
-    func onDisappear() {
-        
-    }
     
 }

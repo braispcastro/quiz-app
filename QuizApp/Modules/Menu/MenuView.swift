@@ -42,8 +42,6 @@ struct MenuView: View {
                 .modifier(MainNavigationStyle())
             }
             .navigationBarHidden(true)
-            .onAppear(perform: viewModel.onAppear)
-            .onDisappear(perform: viewModel.onDisappear)
             .padding(.horizontal, 16)
         }
     }

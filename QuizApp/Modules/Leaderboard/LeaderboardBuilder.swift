@@ -11,8 +11,7 @@ final class LeaderboardBuilder {
     
     static func build() -> LeaderboardView {
         
-        let router: LeaderboardRouter = LeaderboardRouter()
-        let viewModel: LeaderboardViewModel = LeaderboardViewModel(router: router)
+        let viewModel: LeaderboardViewModel = LeaderboardViewModel()
         let view: LeaderboardView = LeaderboardView(viewModel: viewModel)
 
         return view

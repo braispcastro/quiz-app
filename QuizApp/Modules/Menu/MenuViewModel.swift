@@ -8,8 +8,6 @@
 import Foundation
 
 protocol MenuViewModelProtocol {
-    func onAppear()
-    func onDisappear()
     func showGameView() -> GameView
     func showLeaderboardView() -> LeaderboardView
     func showSettingsView() -> SettingsView
@@ -29,25 +27,16 @@ final class MenuViewModel: ObservableObject {
     // MARK: - Private Methods
     
     private func prepareView() {
-        viewObject = Menu.ViewObject()
-        viewObject.title = "QUIZ APP!"
-        viewObject.play = "JUGAR"
-        viewObject.leaderboard = "PUNTUACIONES"
-        viewObject.settings = "OPCIONES"
+        viewObject = Menu.ViewObject(title: "QUIZ APP!",
+                                     play: "JUGAR",
+                                     leaderboard: "PUNTUACIONES",
+                                     settings: "OPCIONES")
     }
     
 }
 
 // MARK: - MenuViewModelProtocol
 extension MenuViewModel: MenuViewModelProtocol {
-    
-    func onAppear() {
-        print("onAppear")
-    }
-    
-    func onDisappear() {
-        print("onDisappear")
-    }
     
     func showGameView() -> GameView {
         return router.gameView()
