@@ -165,7 +165,8 @@ extension GameViewModel: GameViewModelProtocol {
         let isCorrect = correctIndex == index
         if isCorrect {
             totalPoints = Int(viewObject.totalPoints) ?? 0
-            viewObject.totalPoints = "\(totalPoints + timeLeft)"
+            totalPoints += timeLeft
+            viewObject.totalPoints = String(totalPoints)
         } else {
             viewObject.buttons[index].style = .incorrect
         }
