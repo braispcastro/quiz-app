@@ -9,10 +9,11 @@ import Foundation
 
 final class NamePromptBuilder {
     
-    static func build(points: Int) -> NamePromptView {
+    static func build(points: Int, isShown: Bool, onDone: @escaping (String) -> Void) -> NamePromptView {
         
-        let router: NamePromptRouter = NamePromptRouter()
-        let viewModel: NamePromptViewModel = NamePromptViewModel(router: router, points: points)
+        let viewModel: NamePromptViewModel = NamePromptViewModel(points: points,
+                                                                 isShown: isShown,
+                                                                 onDone: onDone)
         let view: NamePromptView = NamePromptView(viewModel: viewModel)
 
         return view

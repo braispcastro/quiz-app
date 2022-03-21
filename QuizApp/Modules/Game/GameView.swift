@@ -80,9 +80,7 @@ struct GameView: View {
             }
             .padding(.horizontal, 16)
             
-            if viewModel.routerObject.showNamePrompt {
-                viewModel.showNamePrompt()
-            }
+            viewModel.showNamePrompt()
         }
         .navigationBarHidden(true)
         .onAppear {

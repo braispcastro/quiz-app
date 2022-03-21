@@ -18,13 +18,13 @@ protocol GameViewModelProtocol {
 
 final class GameViewModel: ObservableObject {
     
+    @Published var totalPoints: Int!
+    @Published var namePromptIsShown: Bool!
     @Published var viewObject: Game.ViewObject!
-    @Published var routerObject: Game.RouterObject!
     
     private var presentation: Binding<PresentationMode>!
     private var timer: Timer!
     private var timeLeft: Int!
-    private var totalPoints: Int!
     private var questionsData: [Game.QuestionData]!
     private var questions: [Game.Question]!
     private var currentQuestionIndex: Int!
@@ -37,7 +37,8 @@ final class GameViewModel: ObservableObject {
     }
     
     private func prepareView() {
-        routerObject = Game.RouterObject()
+        totalPoints = 0
+        namePromptIsShown = false
         viewObject = Game.ViewObject()
         getQuestions()
     }
@@ -88,9 +89,7 @@ final class GameViewModel: ObservableObject {
     
     private func nextQuestion() {
         guard currentQuestionIndex < 9 else {
-            // TODO: Game finished
-            //RankingManager.shared.saveGameToRanking(name: "Brais", points: totalPoints)
-            routerObject.showNamePrompt = true
+            namePromptIsShown = true
             return
         }
         
@@ -112,6 +111,11 @@ final class GameViewModel: ObservableObject {
     
     private func validateAnswer(_ type: Game.AnswerType) {
         timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(goToNextQuestionFromTimer), userInfo: nil, repeats: false)
+    }
+    
+    private func gotName(name: String) {
+        RankingManager.shared.saveGameToRanking(name: name, points: totalPoints)
+        presentation.wrappedValue.dismiss()
     }
     
     @objc private func questionTimer() {
@@ -144,7 +148,7 @@ extension GameViewModel: GameViewModelProtocol {
     
     func onDisappear() {
         stopTimer()
-        routerObject.showNamePrompt = false
+        namePromptIsShown = false
     }
     
     func surrenderTapped() {
@@ -170,7 +174,9 @@ extension GameViewModel: GameViewModelProtocol {
     }
     
     func showNamePrompt() -> NamePromptView {
-        return router.namePrompt(points: totalPoints)
+        return router.namePrompt(points: totalPoints, isShown: namePromptIsShown) { name in
+            self.gotName(name: name)
+        }
     }
     
 }

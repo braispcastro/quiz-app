@@ -9,50 +9,36 @@ import Foundation
 import SwiftUI
 
 protocol NamePromptViewModelProtocol {
-    func onAppear(_ presentation: Binding<PresentationMode>)
-    func onDisappear()
     func confirmTapped()
 }
 
 final class NamePromptViewModel: ObservableObject {
     
-    @Published var viewObject: NamePrompt.ViewObject!
+    @Published var isShown: Bool!
+    @Published var message: String!
+    @Published var name: String!
     
-    private var presentation: Binding<PresentationMode>!
-    private let points: Int
+    private var points: Int
+    private var onDone: (String) -> Void = { _ in }
     
-    private let router: NamePromptRouter!
-    
-    init(router: NamePromptRouter, points: Int) {
+    init(points: Int, isShown: Bool, onDone: @escaping (String) -> Void) {
         self.points = points
-        self.router = router
-        prepareView()
-    }
-    
-    private func prepareView() {
-        viewObject = NamePrompt.ViewObject()
-        viewObject.message = "¡Has conseguido \(points) puntos!"
+        self.onDone = onDone
+        self.isShown = isShown
+        self.message = "¡Has conseguido \(points) puntos!"
+        self.name = ""
     }
     
     // MARK: - Private Methods
-    
 }
 
 extension NamePromptViewModel: NamePromptViewModelProtocol {
     
-    func onAppear(_ presentation: Binding<PresentationMode>) {
-        self.presentation = presentation
-    }
-    
-    func onDisappear() {
-        
-    }
-    
     func confirmTapped() {
-        let name = viewObject.name.trimmingCharacters(in: .whitespacesAndNewlines)
+        let name = name.trimmingCharacters(in: .whitespacesAndNewlines)
         if name.count > 0 {
-            RankingManager.shared.saveGameToRanking(name: name, points: points)
-            presentation.wrappedValue.dismiss()
+            onDone(name)
+            isShown = false
         }
     }
     

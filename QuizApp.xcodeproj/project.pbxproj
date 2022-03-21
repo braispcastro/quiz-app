@@ -41,8 +41,6 @@
 		8BB83B5127D2800A00AEA157 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BB83B5027D2800A00AEA157 /* Preview Assets.xcassets */; };
 		8BCD80BF27E5646500891738 /* NamePromptBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCD80BE27E5646500891738 /* NamePromptBuilder.swift */; };
 		8BCD80C127E564C400891738 /* NamePromptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCD80C027E564C400891738 /* NamePromptViewModel.swift */; };
-		8BCD80C327E5655400891738 /* NamePromptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCD80C227E5655400891738 /* NamePromptModel.swift */; };
-		8BCD80C527E565A400891738 /* NamePromptRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCD80C427E565A400891738 /* NamePromptRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,8 +79,6 @@
 		8BB83B5027D2800A00AEA157 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8BCD80BE27E5646500891738 /* NamePromptBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePromptBuilder.swift; sourceTree = "<group>"; };
 		8BCD80C027E564C400891738 /* NamePromptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePromptViewModel.swift; sourceTree = "<group>"; };
-		8BCD80C227E5655400891738 /* NamePromptModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePromptModel.swift; sourceTree = "<group>"; };
-		8BCD80C427E565A400891738 /* NamePromptRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePromptRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,8 +132,6 @@
 				8BCD80BE27E5646500891738 /* NamePromptBuilder.swift */,
 				8B24AED127E559A400D7F03D /* NamePromptView.swift */,
 				8BCD80C027E564C400891738 /* NamePromptViewModel.swift */,
-				8BCD80C227E5655400891738 /* NamePromptModel.swift */,
-				8BCD80C427E565A400891738 /* NamePromptRouter.swift */,
 			);
 			path = NamePrompt;
 			sourceTree = "<group>";
@@ -364,11 +358,9 @@
 				8B2C6E1027D2849000F070E9 /* GameModel.swift in Sources */,
 				8B2C6E0A27D2842F00F070E9 /* GameBuilder.swift in Sources */,
 				8B2C6E1427D284E200F070E9 /* SettingsBuilder.swift in Sources */,
-				8BCD80C527E565A400891738 /* NamePromptRouter.swift in Sources */,
 				8B2C6E0427D282ED00F070E9 /* MenuViewModel.swift in Sources */,
 				8B2C6E2527D285D100F070E9 /* LeaderboardModel.swift in Sources */,
 				8B1EFDF827E3DDEB008D7A40 /* Color+Custom.swift in Sources */,
-				8BCD80C327E5655400891738 /* NamePromptModel.swift in Sources */,
 				8B1EFDFA27E3E4BB008D7A40 /* MainNavigation.swift in Sources */,
 				8B2C6E0C27D2845700F070E9 /* GameView.swift in Sources */,
 				8B1EFDF327E3CB80008D7A40 /* MainButton.swift in Sources */,

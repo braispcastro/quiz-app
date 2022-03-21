@@ -15,10 +15,6 @@ struct Game {
         case timeout
     }
     
-    struct RouterObject {
-        var showNamePrompt: Bool = false
-    }
-    
     struct ViewObject {
         var count: String
         var totalPoints: String
