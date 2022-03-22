@@ -29,13 +29,14 @@ struct GameView: View {
                     }
                     Button(action: viewModel.surrenderTapped) {
                         HStack {
-                            Image(systemName: "flag")
+                            Image(systemName: "flag.fill")
                             Text("Rendirse")
                         }
                     }
                     .buttonStyle(MainButtonStyle(buttonType: .primary))
                 }
                 Text(viewModel.viewObject.question)
+                    .font(.headline)
                 Spacer()
                 ZStack {
                     Circle()

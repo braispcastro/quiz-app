@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B1AF01527EA5DE5003CCE15 /* HARRYP__.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 8B1AF01427EA5DE5003CCE15 /* HARRYP__.TTF */; };
 		8B1EFDF327E3CB80008D7A40 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1EFDF227E3CB80008D7A40 /* MainButton.swift */; };
 		8B1EFDF627E3CC83008D7A40 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1EFDF527E3CC83008D7A40 /* Color+Hex.swift */; };
 		8B1EFDF827E3DDEB008D7A40 /* Color+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1EFDF727E3DDEB008D7A40 /* Color+Custom.swift */; };
@@ -38,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B1AF01327EA5AB6003CCE15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B1AF01427EA5DE5003CCE15 /* HARRYP__.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = HARRYP__.TTF; sourceTree = "<group>"; };
 		8B1EFDF227E3CB80008D7A40 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		8B1EFDF527E3CC83008D7A40 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		8B1EFDF727E3DDEB008D7A40 /* Color+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Custom.swift"; sourceTree = "<group>"; };
@@ -86,6 +89,14 @@
 				8B24AED027E5597B00D7F03D /* NamePrompt */,
 			);
 			path = Dialogs;
+			sourceTree = "<group>";
+		};
+		8B1AF01227EA5A75003CCE15 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8B1AF01427EA5DE5003CCE15 /* HARRYP__.TTF */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		8B1EFDF127E3CB0E008D7A40 /* Components */ = {
@@ -140,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				8B2C6DFA27D2818D00F070E9 /* Resources */,
+				8B1AF01327EA5AB6003CCE15 /* Info.plist */,
 				8B2C6E2827D28F6500F070E9 /* questions.json */,
 				8B24AEC927E531B800D7F03D /* ranking.json */,
 			);
@@ -149,6 +161,7 @@
 		8B2C6DFA27D2818D00F070E9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8B1AF01227EA5A75003CCE15 /* Fonts */,
 				8BB83B4D27D2800A00AEA157 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -299,6 +312,7 @@
 			files = (
 				8B2C6E2A27D2AEF500F070E9 /* questions.json in Resources */,
 				8BB83B5127D2800A00AEA157 /* Preview Assets.xcassets in Resources */,
+				8B1AF01527EA5DE5003CCE15 /* HARRYP__.TTF in Resources */,
 				8B24AECA27E531B800D7F03D /* ranking.json in Resources */,
 				8BB83B4E27D2800A00AEA157 /* Assets.xcassets in Resources */,
 			);
@@ -468,6 +482,7 @@
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuizApp/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -497,6 +512,7 @@
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuizApp/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

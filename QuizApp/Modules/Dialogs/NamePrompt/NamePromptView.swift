@@ -31,24 +31,23 @@ struct NamePromptView: View {
                             .overlay(
                                 RoundedRectangle(cornerRadius: 4)
                                     .stroke(lineWidth: 2)
-                                    .foregroundColor(Color.customBlue)
+                                    .foregroundColor(Color.white)
                             )
                         Button(action: viewModel.confirmTapped) {
                             Image(systemName: "checkmark.circle.fill")
-                                .foregroundColor(Color.customBlue)
+                                .foregroundColor(Color.white)
                                 .font(.system(size: 28))
                         }
                     }
                 }
                 .padding(40)
                 .frame(width: UIScreen.main.bounds.width - 50, height: 250)
-                .background(Color.white)
-                .foregroundColor(Color.black)
+                .background(Color.customGray)
                 .cornerRadius(8)
                 .overlay(
                     RoundedRectangle(cornerRadius: 8)
-                        .stroke(lineWidth: 4)
-                        .foregroundColor(Color.customBlue)
+                        .stroke(lineWidth: 2)
+                        .foregroundColor(Color.white)
                 )
             }
         }
@@ -58,5 +57,6 @@ struct NamePromptView: View {
 struct NamePromptView_Previews: PreviewProvider {
     static var previews: some View {
         NamePromptBuilder.build(points: 75, isShown: true, onDone: { _ in })
+            .preferredColorScheme(.dark)
     }
 }

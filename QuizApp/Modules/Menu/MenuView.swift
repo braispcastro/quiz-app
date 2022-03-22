@@ -14,8 +14,9 @@ struct MenuView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                VStack(spacing: 8) {
+                VStack(spacing: 16) {
                     Text(viewModel.viewObject.title)
+                        .font(Font.custom("HARRYP__", size: 48))
                     Spacer()
                     NavigationLink(destination: viewModel.showGameView) {
                         HStack {
