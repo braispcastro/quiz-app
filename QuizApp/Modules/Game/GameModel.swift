@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Game {
     
@@ -21,6 +22,7 @@ struct Game {
         var question: String
         var buttons: [ButtonAnswer]
         var timeLeft: String
+        var countdownTrim: CGFloat
         var isAnswerDisabled: Bool
         
         init() {
@@ -33,6 +35,7 @@ struct Game {
                 ButtonAnswer(title: "", style: .primary)
             ]
             timeLeft = ""
+            countdownTrim = 1
             isAnswerDisabled = false
         }
     }

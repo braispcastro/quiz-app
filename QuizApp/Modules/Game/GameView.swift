@@ -30,14 +30,26 @@ struct GameView: View {
                     Button(action: viewModel.surrenderTapped) {
                         HStack {
                             Image(systemName: "flag")
+                            Text("Rendirse")
                         }
                     }
                     .buttonStyle(MainButtonStyle(buttonType: .primary))
                 }
                 Text(viewModel.viewObject.question)
                 Spacer()
-                Text(viewModel.viewObject.timeLeft)
-                    .font(.system(size: 64))
+                ZStack {
+                    Circle()
+                        .stroke(Color.gray.opacity(0.2), style: StrokeStyle(lineWidth: 12, lineCap: .round))
+                    Circle()
+                        .trim(from: 0, to: viewModel.viewObject.countdownTrim)
+                        .stroke(viewModel.countdownTimerColor(), style: StrokeStyle(lineWidth: 12, lineCap: .round))
+                        .rotationEffect(.degrees(-90))
+                        //.animation(.easeInOut)
+                    Text(viewModel.viewObject.timeLeft)
+                        .font(.system(size: 80))
+                        .foregroundColor(viewModel.countdownTimerColor())
+                }
+                .frame(height: 200)
                 VStack(spacing: 8) {
                     Button(action: {
                         viewModel.answerTapped(index: 0)

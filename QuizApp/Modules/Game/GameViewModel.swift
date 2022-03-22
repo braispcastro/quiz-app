@@ -14,6 +14,7 @@ protocol GameViewModelProtocol {
     func surrenderTapped()
     func answerTapped(index: Int)
     func showNamePrompt() -> NamePromptView
+    func countdownTimerColor() -> Color
 }
 
 final class GameViewModel: ObservableObject {
@@ -38,6 +39,7 @@ final class GameViewModel: ObservableObject {
     
     private func prepareView() {
         totalPoints = 0
+        timeLeft = 30
         namePromptIsShown = false
         viewObject = Game.ViewObject()
         getQuestions()
@@ -96,6 +98,7 @@ final class GameViewModel: ObservableObject {
         currentQuestionIndex += 1
         timeLeft = 30
         viewObject.timeLeft = String(timeLeft)
+        viewObject.countdownTrim = 1
         viewObject.count = "\(currentQuestionIndex + 1)/\(questions.count)"
         let currentQuestion = questions[currentQuestionIndex]
         viewObject.question = currentQuestion.question
@@ -120,6 +123,7 @@ final class GameViewModel: ObservableObject {
     
     @objc private func questionTimer() {
         timeLeft -= 1
+        viewObject.countdownTrim = 1 - ((30 - CGFloat(timeLeft)) / 30)
         viewObject.timeLeft = String(timeLeft)
         
         if timeLeft < 1 {
@@ -177,6 +181,16 @@ extension GameViewModel: GameViewModelProtocol {
     func showNamePrompt() -> NamePromptView {
         return router.namePrompt(points: totalPoints, isShown: namePromptIsShown) { name in
             self.gotName(name: name)
+        }
+    }
+    
+    func countdownTimerColor() -> Color {
+        if timeLeft <= 5 {
+            return Color.red
+        } else if timeLeft <= 15 {
+            return Color.orange
+        } else {
+            return Color.blueStart
         }
     }
     
