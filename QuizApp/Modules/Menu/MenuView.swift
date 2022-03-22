@@ -34,7 +34,7 @@ struct MenuView: View {
                 .modifier(MainNavigationStyle())
             }
             .navigationBarHidden(true)
-            .padding(.horizontal, 16)
+            .padding(16)
         }
     }
 }

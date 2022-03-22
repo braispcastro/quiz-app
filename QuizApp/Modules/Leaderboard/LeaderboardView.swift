@@ -31,7 +31,7 @@ struct LeaderboardView: View {
         .onAppear {
             viewModel.onAppear(presentation)
         }
-        .padding(.horizontal, 16)
+        .padding(16)
     }
 }
 

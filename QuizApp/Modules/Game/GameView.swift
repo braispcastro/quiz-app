@@ -14,7 +14,7 @@ struct GameView: View {
     
     var body: some View {
         ZStack {
-            VStack(spacing: 64) {
+            VStack(spacing: 40) {
                 ZStack {
                     HStack {
                         VStack {
@@ -46,10 +46,10 @@ struct GameView: View {
                         .rotationEffect(.degrees(-90))
                         //.animation(.easeInOut)
                     Text(viewModel.viewObject.timeLeft)
-                        .font(.system(size: 80))
+                        .font(.system(size: 72))
                         .foregroundColor(viewModel.countdownTimerColor())
                 }
-                .frame(height: 200)
+                .frame(height: 160)
                 VStack(spacing: 8) {
                     Button(action: {
                         viewModel.answerTapped(index: 0)
@@ -90,7 +90,7 @@ struct GameView: View {
                 }
                 .disabled(viewModel.viewObject.isAnswerDisabled)
             }
-            .padding(.horizontal, 16)
+            .padding(16)
             
             viewModel.showNamePrompt()
         }
