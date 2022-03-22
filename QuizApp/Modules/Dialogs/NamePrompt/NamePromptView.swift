@@ -31,11 +31,11 @@ struct NamePromptView: View {
                             .overlay(
                                 RoundedRectangle(cornerRadius: 4)
                                     .stroke(lineWidth: 2)
-                                    .foregroundColor(Color.blueStart)
+                                    .foregroundColor(Color.customBlue)
                             )
                         Button(action: viewModel.confirmTapped) {
                             Image(systemName: "checkmark.circle.fill")
-                                .foregroundColor(.blueStart)
+                                .foregroundColor(Color.customBlue)
                                 .font(.system(size: 28))
                         }
                     }
@@ -48,7 +48,7 @@ struct NamePromptView: View {
                 .overlay(
                     RoundedRectangle(cornerRadius: 8)
                         .stroke(lineWidth: 4)
-                        .foregroundColor(Color.blueStart)
+                        .foregroundColor(Color.customBlue)
                 )
             }
         }

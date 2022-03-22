@@ -33,35 +33,27 @@ struct MainButtonStyle: ButtonStyle {
                     switch buttonType {
                     case .primary:
                         RoundedRectangle(cornerRadius: cornerRadius)
-                            .fill(Color.white)
+                            .fill(Color.customGray)
                     case .secondary:
                         RoundedRectangle(cornerRadius: cornerRadius)
-                            .fill(LinearGradient(colors: [Color.blueStart, Color.blueEnd],
-                                                 startPoint: .top,
-                                                 endPoint: .bottom))
+                            .fill(Color.customBlue)
                     case .correct:
                         RoundedRectangle(cornerRadius: cornerRadius)
-                            .fill(LinearGradient(colors: [Color.greenStart, Color.greenEnd],
-                                                 startPoint: .top,
-                                                 endPoint: .bottom))
+                            .fill(Color.customGreen)
                     case .incorrect:
                         RoundedRectangle(cornerRadius: cornerRadius)
-                            .fill(LinearGradient(colors: [Color.redStart, Color.redEnd],
-                                                 startPoint: .top,
-                                                 endPoint: .bottom))
+                            .fill(Color.customRed)
                     }
                 }
             )
             .overlay(
                 Group {
-                    if buttonType == .primary {
-                        RoundedRectangle(cornerRadius: cornerRadius)
-                            .stroke(lineWidth: 2)
-                            .foregroundColor(Color.blueStart)
-                    }
+                    RoundedRectangle(cornerRadius: cornerRadius)
+                        .stroke(lineWidth: 1)
+                        .foregroundColor(Color.white)
                 }
             )
-            .foregroundColor(buttonType == .primary ? Color.blueStart : Color.white)
+            .foregroundColor(Color.white)
             .font(.headline)
     }
 }
@@ -72,7 +64,7 @@ struct MainButton_Previews: PreviewProvider {
             Button(action: {
                 print("Icon button style")
             }) {
-                Image.init(systemName: "flag")
+                Image.init(systemName: "heart.fill")
             }
             .buttonStyle(MainButtonStyle(buttonType: .primary))
             
@@ -114,7 +106,17 @@ struct MainButton_Previews: PreviewProvider {
             }
             .buttonStyle(MainButtonStyle(buttonType: .incorrect))
         }
-        .preferredColorScheme(.light)
+        .preferredColorScheme(.dark)
         .padding(15)
+        .background(
+            ZStack {
+                Image("Hogwarts")
+                    .resizable()
+                    .scaledToFill()
+                
+                Color.black.opacity(0.5)
+            }
+            .ignoresSafeArea()
+        )
     }
 }

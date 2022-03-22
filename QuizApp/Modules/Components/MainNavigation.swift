@@ -21,14 +21,14 @@ struct MainNavigationStyle: ViewModifier {
             .contentShape(RoundedRectangle(cornerRadius: cornerRadius))
             .background(
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .fill(Color.white)
+                    .fill(Color.customGray)
             )
             .overlay(
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .stroke(lineWidth: 2)
-                    .foregroundColor(Color.blueStart)
+                    .stroke(lineWidth: 1)
+                    .foregroundColor(Color.white)
             )
-            .foregroundColor(Color.blueStart)
+            .foregroundColor(Color.white)
             .font(.headline)
     }
 }
