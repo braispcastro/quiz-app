@@ -23,6 +23,7 @@ struct LeaderboardView: View {
                         Text(String(rank.points))
                     }
                     .listRowSeparator(.hidden)
+                    .listRowBackground(Color.clear)
                 }
             }
             .navigationTitle("Puntuaciones")
@@ -32,6 +33,16 @@ struct LeaderboardView: View {
             viewModel.onAppear(presentation)
         }
         .padding(16)
+        .background(
+            ZStack {
+                Image("Hogwarts")
+                    .resizable()
+                    .scaledToFill()
+                
+                Color.black.opacity(0.5)
+            }
+            .ignoresSafeArea()
+        )
     }
 }
 
@@ -39,6 +50,7 @@ struct LeaderboardView_Previews: PreviewProvider {
     
     static var previews: some View {
         LeaderboardBuilder.build()
+            .preferredColorScheme(.dark)
     }
     
 }

@@ -190,7 +190,7 @@ extension GameViewModel: GameViewModelProtocol {
         } else if timeLeft <= 15 {
             return Color.orange
         } else {
-            return Color.blueStart
+            return Color.white
         }
     }
     

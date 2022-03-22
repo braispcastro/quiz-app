@@ -13,28 +13,40 @@ struct MenuView: View {
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 8) {
-                Text(viewModel.viewObject.title)
-                Spacer()
-                NavigationLink(destination: viewModel.showGameView) {
-                    HStack {
-                        Spacer()
-                        Text(viewModel.viewObject.play)
-                        Spacer()
+            ZStack {
+                VStack(spacing: 8) {
+                    Text(viewModel.viewObject.title)
+                    Spacer()
+                    NavigationLink(destination: viewModel.showGameView) {
+                        HStack {
+                            Spacer()
+                            Text(viewModel.viewObject.play)
+                            Spacer()
+                        }
                     }
-                }
-                .modifier(MainNavigationStyle())
-                NavigationLink(destination: viewModel.showLeaderboardView) {
-                    HStack {
-                        Spacer()
-                        Text(viewModel.viewObject.leaderboard)
-                        Spacer()
+                    .modifier(MainNavigationStyle())
+                    NavigationLink(destination: viewModel.showLeaderboardView) {
+                        HStack {
+                            Spacer()
+                            Text(viewModel.viewObject.leaderboard)
+                            Spacer()
+                        }
                     }
+                    .modifier(MainNavigationStyle())
                 }
-                .modifier(MainNavigationStyle())
+                .navigationBarHidden(true)
+                .padding(16)
             }
-            .navigationBarHidden(true)
-            .padding(16)
+            .background(
+                ZStack {
+                    Image("Hogwarts")
+                        .resizable()
+                        .scaledToFill()
+                    
+                    Color.black.opacity(0.5)
+                }
+                .ignoresSafeArea()
+            )
         }
     }
 }
@@ -43,6 +55,7 @@ struct MenuView_Previews: PreviewProvider {
     
     static var previews: some View {
         MenuBuilder.build()
+            .preferredColorScheme(.dark)
     }
     
 }

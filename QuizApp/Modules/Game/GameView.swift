@@ -99,6 +99,16 @@ struct GameView: View {
             viewModel.onAppear(presentation)
         }
         .onDisappear(perform: viewModel.onDisappear)
+        .background(
+            ZStack {
+                Image("Hogwarts")
+                    .resizable()
+                    .scaledToFill()
+                
+                Color.black.opacity(0.5)
+            }
+            .ignoresSafeArea()
+        )
     }
 }
 
@@ -106,6 +116,7 @@ struct GameView_Previews: PreviewProvider {
     
     static var previews: some View {
         GameBuilder.build()
+            .preferredColorScheme(.dark)
     }
     
 }
