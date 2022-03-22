@@ -10,7 +10,6 @@ import Foundation
 protocol MenuRouterProtocol {
     func gameView() -> GameView
     func leaderboardView() -> LeaderboardView
-    func settingsView() -> SettingsView
 }
 
 final class MenuRouter: MenuRouterProtocol {
@@ -21,10 +20,6 @@ final class MenuRouter: MenuRouterProtocol {
     
     func leaderboardView() -> LeaderboardView {
         return LeaderboardBuilder.build()
-    }
-    
-    func settingsView() -> SettingsView {
-        return SettingsBuilder.build()
     }
     
 }

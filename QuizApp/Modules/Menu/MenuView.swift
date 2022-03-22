@@ -32,14 +32,6 @@ struct MenuView: View {
                     }
                 }
                 .modifier(MainNavigationStyle())
-                NavigationLink(destination: viewModel.showSettingsView) {
-                    HStack {
-                        Spacer()
-                        Text(viewModel.viewObject.settings)
-                        Spacer()
-                    }
-                }
-                .modifier(MainNavigationStyle())
             }
             .navigationBarHidden(true)
             .padding(.horizontal, 16)

@@ -10,7 +10,6 @@ import Foundation
 protocol MenuViewModelProtocol {
     func showGameView() -> GameView
     func showLeaderboardView() -> LeaderboardView
-    func showSettingsView() -> SettingsView
 }
 
 final class MenuViewModel: ObservableObject {
@@ -44,10 +43,6 @@ extension MenuViewModel: MenuViewModelProtocol {
     
     func showLeaderboardView() -> LeaderboardView {
         return router.leaderboardView()
-    }
-    
-    func showSettingsView() -> SettingsView {
-        return router.settingsView()
     }
     
 }
