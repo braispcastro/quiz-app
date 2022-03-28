@@ -1,6 +1,6 @@
 # Harry Potter - Quiz APP
 
-Esta aplicación está hecha siguiendo el tercer reto mensual del año 2022 de [@MoureDev](https://github.com/mouredev)
+Esta aplicación está hecha siguiendo el reto mensual de Marzo de 2022 de [@MoureDev](https://github.com/mouredev)
 <br/>
 [App Monthly Challenge 2022](https://github.com/mouredev/Monthly-App-Challenge-2022)
 
