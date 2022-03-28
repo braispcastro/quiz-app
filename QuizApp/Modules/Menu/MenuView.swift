@@ -16,7 +16,6 @@ struct MenuView: View {
             ZStack {
                 VStack(spacing: 16) {
                     Text(viewModel.viewObject.title)
-                        .font(Font.custom("HARRYP__", size: 36	))
                         .multilineTextAlignment(.center)
                     Spacer()
                     NavigationLink(destination: viewModel.showGameView) {
@@ -49,7 +48,8 @@ struct MenuView: View {
                 }
                 .ignoresSafeArea()
             )
-        }	    }
+        }
+    }
 }
 
 struct MenuView_Previews: PreviewProvider {
