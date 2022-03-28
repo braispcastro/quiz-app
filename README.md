@@ -18,8 +18,7 @@ Screen 4 | Screen 5 | Screen 6
 
 ## Tecnologías
 
-<img src="https://i.imgur.com/e0EtR46.png" width="100">
-<img src="https://i.imgur.com/rOVh4ld.png" width="100">
+<img src="https://i.imgur.com/e0EtR46.png" width="100"><img src="https://i.imgur.com/rOVh4ld.png" width="100">
 
 - Xcode 13.2.1
 - SwiftUI
