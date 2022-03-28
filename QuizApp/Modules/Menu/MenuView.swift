@@ -16,6 +16,8 @@ struct MenuView: View {
             ZStack {
                 VStack(spacing: 16) {
                     Text(viewModel.viewObject.title)
+                        .font(.title)
+                        .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                     Spacer()
                     NavigationLink(destination: viewModel.showGameView) {
