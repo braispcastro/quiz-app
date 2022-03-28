@@ -10,13 +10,14 @@ import SwiftUI
 struct MenuView: View {
     
     @ObservedObject var viewModel: MenuViewModel
-    
+    	
     var body: some View {
         NavigationView {
             ZStack {
                 VStack(spacing: 16) {
                     Text(viewModel.viewObject.title)
-                        .font(Font.custom("HARRYP__", size: 48))
+                        .font(Font.custom("HARRYP__", size: 36	))
+                        .multilineTextAlignment(.center)
                     Spacer()
                     NavigationLink(destination: viewModel.showGameView) {
                         HStack {
@@ -48,8 +49,7 @@ struct MenuView: View {
                 }
                 .ignoresSafeArea()
             )
-        }
-    }
+        }	    }
 }
 
 struct MenuView_Previews: PreviewProvider {

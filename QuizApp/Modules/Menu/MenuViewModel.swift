@@ -26,7 +26,7 @@ final class MenuViewModel: ObservableObject {
     // MARK: - Private Methods
     
     private func prepareView() {
-        viewObject = Menu.ViewObject(title: "QUIZ APP!",
+        viewObject = Menu.ViewObject(title: "HARRY POTTER\nQUIZ APP",
                                      play: "JUGAR",
                                      leaderboard: "PUNTUACIONES",
                                      settings: "OPCIONES")
